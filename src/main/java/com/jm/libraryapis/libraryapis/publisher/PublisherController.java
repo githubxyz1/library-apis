@@ -17,11 +17,12 @@ public class PublisherController {
     public PublisherController(PublisherService publisherService) {
         this.publisherService = publisherService;
     }
+
     @GetMapping(path = "/{publisherId}")
     public Publisher getPublisher(@PathVariable Integer publisherId) {
         return new Publisher(publisherId, "name1", "aaaa@example.com", "111111111");
 
-                //name: "name1" , emailId: "aaaa@example.com", phoneNumber: "1111111111");
+        //name: "name1" , emailId: "aaaa@example.com", phoneNumber: "1111111111");
 
     }
 
@@ -34,9 +35,19 @@ public ResponseEntity<?> addPublisher(@RequestBody Publisher publisher) {
     }
 
     return new ResponseEntity<>(publisher, HttpStatus.CREATED);
-   }
 }
 
+ //   try {
+//        publisher = publisherService.addPublisher(publisher);
+ //   } catch (LibraryResourceAlreadyExistException e) {
+   //     return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
+    //}
+
+  //  return new ResponseEntity<>(publisher, HttpStatus.CREATED);
+   //}
+//}
+
+}
 
 
 
