@@ -84,4 +84,3 @@ public class PublisherEntity {
         this.phoneNumber = phoneNumber;
     }
 }
- 
