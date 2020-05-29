@@ -1,6 +1,7 @@
 package com.jm.libraryapis.libraryapis.publisher;
 import com.jm.libraryapis.libraryapis.exception.LibraryResourceAlreadyExistException;
 import com.jm.libraryapis.libraryapis.exception.LibraryResourceNotFoundException;
+import com.jm.libraryapis.libraryapis.util.LibraryApiUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
@@ -82,6 +83,16 @@ public ResponseEntity<?> addPublisher(@RequestBody Publisher publisher) {
         }
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
+
+    @GetMapping(path = "/search")
+    public ResponseEntity<?> searchPublisher(@RequestParam String name) {
+
+        if(!LibraryApiUtils.doesStringValueExist(name))  {
+            return new ResponseEntity<>( "please enter a name to search Publisher.", HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(publisherService.searchPublisher(name), HttpStatus.OK);
+    }
+
 
 
 }
