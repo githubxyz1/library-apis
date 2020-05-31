@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 
+import javax.validation.Valid;
 import java.util.UUID;
 //import com.jm.libraryapis.libraryapis.exception;
 
@@ -48,7 +49,7 @@ public class PublisherController {
     //}
 
 @PostMapping
-public ResponseEntity<?> addPublisher(@RequestBody Publisher publisher, @RequestHeader(value = "Trace-Id", defaultValue = "") String traceId) {
+public ResponseEntity<?> addPublisher(@Valid @RequestBody Publisher publisher, @RequestHeader(value = "Trace-Id", defaultValue = "") String traceId) {
 
     if(!LibraryApiUtils.doesStringValueExist(traceId)) {
         traceId = UUID.randomUUID().toString();
@@ -75,7 +76,7 @@ public ResponseEntity<?> addPublisher(@RequestBody Publisher publisher, @Request
 //}
 
     @PutMapping(path = "/{publisherId}")
-    public ResponseEntity<?> updatePublisher(@PathVariable Integer publisherId, @RequestBody Publisher publisher, @RequestHeader(value = "Trace-Id", defaultValue = "") String traceId) {
+    public ResponseEntity<?> updatePublisher(@PathVariable Integer publisherId, @Valid @RequestBody Publisher publisher, @RequestHeader(value = "Trace-Id", defaultValue = "") String traceId) {
 
         if(!LibraryApiUtils.doesStringValueExist(traceId)) {
             traceId = UUID.randomUUID().toString();
