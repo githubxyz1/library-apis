@@ -7,5 +7,6 @@ import java.util.List;
 
 @Repository
 public interface PublisherRepository extends CrudRepository<PublisherEntity, Integer> {
-    List<PublisherEntity> findByNameContaining(String name);
+ // new fix 5/30/2020 spring
+   List<PublisherEntity> findByNameContaining(String name);
 }
