@@ -2,6 +2,9 @@ package com.jm.libraryapis.libraryapis.publisher;
 import com.jm.libraryapis.libraryapis.exception.LibraryResourceAlreadyExistException;
 import com.jm.libraryapis.libraryapis.exception.LibraryResourceNotFoundException;
 import com.jm.libraryapis.libraryapis.util.LibraryApiUtils;
+import jdk.nashorn.internal.lookup.MethodHandleFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
@@ -19,6 +22,7 @@ public class PublisherController {
 
     private PublisherService publisherService;
     private Integer publisherId;
+    private static Logger logger = LoggerFactory.getLogger(PublisherController.class);
 
     public PublisherController(PublisherService publisherService) {
         this.publisherService = publisherService;
@@ -51,6 +55,7 @@ public class PublisherController {
 @PostMapping
 public ResponseEntity<?> addPublisher(@Valid @RequestBody Publisher publisher, @RequestHeader(value = "Trace-Id", defaultValue = "") String traceId) {
 
+    logger.debug("Request to add Publisher: {}", publisher);
     if(!LibraryApiUtils.doesStringValueExist(traceId)) {
         traceId = UUID.randomUUID().toString();
     }
