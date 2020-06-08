@@ -52,7 +52,7 @@ public class PublisherService {
             addedPublisher = publisherRepository.save(publisherEntity);
         } catch (DataIntegrityViolationException e) {
             logger.error("TraceId: {}, Publisher already exists!!", traceId, e);
-            throw new LibraryResourceAlreadyExistException("TraceId: " + traceId + "publisher already exists!!");
+            throw new LibraryResourceAlreadyExistException(traceId, "Publisher already exists!!");
         }
 
         publisherToBeAdded.setPublisherId(addedPublisher.getPublisherId());
@@ -70,7 +70,7 @@ public class PublisherService {
             PublisherEntity pe = publisherEntity.get();
             publisher = createPublisherFromEntity(pe);
         } else {
-            throw new LibraryResourceNotFoundException("TraceId: " + traceId + "Publisher Id: " + publisherId + " Not found");
+            throw new LibraryResourceNotFoundException(traceId, "Publisher Id: " + publisherId + " Not found");
         }
         return publisher;
     }
@@ -96,7 +96,7 @@ public class PublisherService {
             publisherRepository.save(pe);
             publisherToBeUpdated = createPublisherFromEntity(pe);
         } else {
-            throw new LibraryResourceNotFoundException("TraceId: " + traceId + "Publisher Id: " + publisherToBeUpdated.getPublisherId() + " Not found");
+            throw new LibraryResourceNotFoundException(traceId, "Publisher Id: " + publisherToBeUpdated.getPublisherId() + " Not found");
         }
     }
 
@@ -105,7 +105,8 @@ public class PublisherService {
         try {
             publisherRepository.deleteById(publisherId);
         } catch(EmptyResultDataAccessException e) {
-            throw new LibraryResourceNotFoundException("TraceId: " + traceId + "Publisher Id: " + publisherId + "Not Found");
+            logger.error("TraceId: {}, Publisher Not Found!", traceId, e);
+            throw new LibraryResourceNotFoundException(traceId, "Publisher Id: " + publisherId + "Not Found");
         }
     }
 

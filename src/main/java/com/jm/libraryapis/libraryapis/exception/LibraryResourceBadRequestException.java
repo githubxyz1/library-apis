@@ -1,14 +1,14 @@
 package com.jm.libraryapis.libraryapis.exception;
 
-public class LibraryResourceNotFoundException extends Exception {
+public class LibraryResourceBadRequestException extends Exception {
 
     private String traceId;
 
-    public LibraryResourceNotFoundException(String message) {
+    public LibraryResourceBadRequestException(String message) {
         super(message);
     }
 
-    public LibraryResourceNotFoundException(String traceId, String s) {
+    public LibraryResourceBadRequestException(String traceId, String s) {
         super(s);
         this.traceId = traceId;
     }
