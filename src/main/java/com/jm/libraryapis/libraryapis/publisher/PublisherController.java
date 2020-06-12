@@ -22,7 +22,7 @@ import java.util.UUID;
 public class PublisherController {
 
     private PublisherService publisherService;
-    private Integer publisherId;
+    //private Integer publisherId;
     private static Logger logger = LoggerFactory.getLogger(PublisherController.class);
 
     public PublisherController(PublisherService publisherService) {

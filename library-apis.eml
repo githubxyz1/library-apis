@@ -32,6 +32,8 @@
 	<lib name="Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1" scope="TEST"/>
 	<lib name="Maven: org.springframework:spring-test:5.2.6.RELEASE" scope="TEST"/>
 	<lib name="Maven: org.xmlunit:xmlunit-core:2.6.4" scope="TEST"/>
+	<lib name="Maven: junit:junit:4.12" scope="TEST"/>
+	<lib name="Maven: org.hamcrest:hamcrest-core:2.1" scope="TEST"/>
 	<levels>
 		<level name="Maven: org.springframework.boot:spring-boot-starter-web:2.2.7.RELEASE" value="project"/>
 		<level name="Maven: org.springframework.boot:spring-boot-starter:2.2.7.RELEASE" value="project"/>
@@ -122,5 +124,7 @@
 		<level name="Maven: org.springframework:spring-jcl:5.2.6.RELEASE" value="project"/>
 		<level name="Maven: org.springframework:spring-test:5.2.6.RELEASE" value="project"/>
 		<level name="Maven: org.xmlunit:xmlunit-core:2.6.4" value="project"/>
+		<level name="Maven: junit:junit:4.12" value="project"/>
+		<level name="Maven: org.hamcrest:hamcrest-core:2.1" value="project"/>
 	</levels>
 </component>
