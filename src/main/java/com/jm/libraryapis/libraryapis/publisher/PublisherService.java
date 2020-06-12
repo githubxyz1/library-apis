@@ -54,21 +54,27 @@ public class PublisherService {
             logger.error("TraceId: {}, Publisher already exists!!", traceId, e);
             throw new LibraryResourceAlreadyExistException(traceId, "Publisher already exists!!");
         }
-
-        publisherToBeAdded.setPublisherId(addedPublisher.getPublisherId());
-        logger.info("TraceId: {}, Publisher added: {}", traceId, publisherToBeAdded);
+        logger.info("TraceId : {}, before Publisher added: {}, publisherId in PublisherService: {}", traceId, publisherToBeAdded, addedPublisher.getPublisherId());
+//here1x !!!???to fix unit test issue        publisherToBeAdded.setPublisherId(addedPublisher.getPublisherId());
+        logger.info("TraceId : {}, Publisher added: {}, publisherId in PublisherService: {}", traceId, publisherToBeAdded, publisherToBeAdded.getPublisherId());
         // return publisherToBeAdded;
     }
 
     public Publisher getPublisher(Integer publisherId, String traceId) throws LibraryResourceNotFoundException {
 
         Optional<PublisherEntity> publisherEntity = publisherRepository.findById(publisherId);
-        Publisher publisher = null;
+        //??!! here1x Publisher publisher = null;
+        logger.info("inside PublisherService - publisherId = : {}" , publisherId);
+        logger.info("publisherEntity = : {} " , publisherEntity);
+        //!! causes error logger.info("publisherEntity.get() = : {}", publisherEntity.get());
+        Publisher publisher;
 
         if (publisherEntity.isPresent()) {
 
             PublisherEntity pe = publisherEntity.get();
+            logger.info("pe.getPublisherId() = : {}" , pe.getPublisherId());
             publisher = createPublisherFromEntity(pe);
+            logger.info("publisherId inside PublisherService.getPublisher = : {} , publisherId = : {}" , publisher.getPublisherId() , publisherId);
         } else {
             throw new LibraryResourceNotFoundException(traceId, "Publisher Id: " + publisherId + " Not found");
         }
