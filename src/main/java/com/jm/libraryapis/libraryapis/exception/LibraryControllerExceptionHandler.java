@@ -14,44 +14,46 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import java.util.UUID;
 
 @ControllerAdvice
-public class LibraryControllerExceptionHandler  extends ResponseEntityExceptionHandler {
+public class LibraryControllerExceptionHandler extends ResponseEntityExceptionHandler {
 
     private static Logger logger = LoggerFactory.getLogger(LibraryControllerExceptionHandler.class);
 
     @ExceptionHandler(LibraryResourceNotFoundException.class)
     public final ResponseEntity<LibraryApiError> handleLibraryResourceNotFoundException(
             LibraryResourceNotFoundException e, WebRequest webRequest) {
+
         return new ResponseEntity<>(new LibraryApiError(e.getTraceId(), e.getMessage()), HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(LibraryResourceAlreadyExistException.class)
     public final ResponseEntity<LibraryApiError> handleLibraryResourceAlreadyExistException(
             LibraryResourceAlreadyExistException e, WebRequest webRequest) {
+
         return new ResponseEntity<>(new LibraryApiError(e.getTraceId(), e.getMessage()), HttpStatus.CONFLICT);
     }
 
     @ExceptionHandler(LibraryResourceBadRequestException.class)
     public final ResponseEntity<LibraryApiError> handleLibraryResourceBadRequestException(
             LibraryResourceBadRequestException e, WebRequest webRequest) {
+
         return new ResponseEntity<>(new LibraryApiError(e.getTraceId(), e.getMessage()), HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(Exception.class)
     public final ResponseEntity<LibraryApiError> handleAllException(
             Exception e, WebRequest webRequest) {
+
         String traceId = getTraceId(webRequest);
         logger.error(traceId, e);
-                return new ResponseEntity<>(new LibraryApiError(traceId, e.getMessage()), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(new LibraryApiError(traceId, e.getMessage()), HttpStatus.BAD_REQUEST);
     }
 
     private String getTraceId(WebRequest webRequest) {
-        String traceId =  webRequest.getHeader("Trace-Id");
+        String traceId = webRequest.getHeader("Trace-Id");
         if(!LibraryApiUtils.doesStringValueExist(traceId)) {
             traceId = UUID.randomUUID().toString();
         }
+
         return traceId;
-        }
-
-
-
+    }
 }

@@ -1,4 +1,4 @@
-package com.skb.course.apis.libraryapis.user;
+package com.jm.libraryapis.libraryapis.user;
 
 public enum Role {
 

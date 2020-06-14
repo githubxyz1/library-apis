@@ -1,14 +1,14 @@
-package com.skb.course.apis.libraryapis.user;
+package com.jm.libraryapis.libraryapis.user;
 
-import com.skb.course.apis.libraryapis.user.User;
-import com.skb.course.apis.libraryapis.user.UserEntity;
-import com.skb.course.apis.libraryapis.user.UserRepository;
-import com.skb.course.apis.libraryapis.user.UserService;
-import com.skb.course.apis.libraryapis.exception.LibraryResourceAlreadyExistException;
-import com.skb.course.apis.libraryapis.exception.LibraryResourceNotFoundException;
-import com.skb.course.apis.libraryapis.model.common.Gender;
-import com.skb.course.apis.libraryapis.testutils.LibraryApiTestUtil;
-import com.skb.course.apis.libraryapis.testutils.TestConstants;
+import com.jm.libraryapis.libraryapis.user.User;
+import com.jm.libraryapis.libraryapis.user.UserEntity;
+import com.jm.libraryapis.libraryapis.user.UserRepository;
+import com.jm.libraryapis.libraryapis.user.UserService;
+import com.jm.libraryapis.libraryapis.exception.LibraryResourceAlreadyExistException;
+import com.jm.libraryapis.libraryapis.exception.LibraryResourceNotFoundException;
+import com.jm.libraryapis.libraryapis.model.common.Gender;
+import com.jm.libraryapis.libraryapis.testutils.LibraryApiTestUtil;
+import com.jm.libraryapis.libraryapis.testutils.TestConstants;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

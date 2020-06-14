@@ -12,6 +12,5 @@ public class LibraryApiUtilsTest {
         assertTrue(LibraryApiUtils.doesStringValueExist("ValueExist"));
         assertFalse(LibraryApiUtils.doesStringValueExist(""));
         assertFalse(LibraryApiUtils.doesStringValueExist(null));
-
     }
 }

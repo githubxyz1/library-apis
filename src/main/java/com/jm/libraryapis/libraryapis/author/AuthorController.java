@@ -1,11 +1,11 @@
-package com.skb.course.apis.libraryapis.author;
+package com.jm.libraryapis.libraryapis.author;
 
-import com.skb.course.apis.libraryapis.exception.LibraryResourceAlreadyExistException;
-import com.skb.course.apis.libraryapis.exception.LibraryResourceBadRequestException;
-import com.skb.course.apis.libraryapis.exception.LibraryResourceNotFoundException;
-import com.skb.course.apis.libraryapis.author.Author;
-import com.skb.course.apis.libraryapis.author.AuthorService;
-import com.skb.course.apis.libraryapis.util.LibraryApiUtils;
+import com.jm.libraryapis.libraryapis.exception.LibraryResourceAlreadyExistException;
+import com.jm.libraryapis.libraryapis.exception.LibraryResourceBadRequestException;
+import com.jm.libraryapis.libraryapis.exception.LibraryResourceNotFoundException;
+import com.jm.libraryapis.libraryapis.author.Author;
+import com.jm.libraryapis.libraryapis.author.AuthorService;
+import com.jm.libraryapis.libraryapis.util.LibraryApiUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

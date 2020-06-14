@@ -1,10 +1,10 @@
-package com.skb.course.apis.libraryapis.author;
+package com.jm.libraryapis.libraryapis.author;
 
-import com.skb.course.apis.libraryapis.exception.LibraryResourceAlreadyExistException;
-import com.skb.course.apis.libraryapis.exception.LibraryResourceNotFoundException;
-import com.skb.course.apis.libraryapis.model.common.Gender;
-import com.skb.course.apis.libraryapis.testutils.LibraryApiTestUtil;
-import com.skb.course.apis.libraryapis.testutils.TestConstants;
+import com.jm.libraryapis.libraryapis.exception.LibraryResourceAlreadyExistException;
+import com.jm.libraryapis.libraryapis.exception.LibraryResourceNotFoundException;
+import com.jm.libraryapis.libraryapis.model.common.Gender;
+import com.jm.libraryapis.libraryapis.testutils.LibraryApiTestUtil;
+import com.jm.libraryapis.libraryapis.testutils.TestConstants;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

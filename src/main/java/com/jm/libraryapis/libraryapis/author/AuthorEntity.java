@@ -1,7 +1,7 @@
-package com.skb.course.apis.libraryapis.author;
+package com.jm.libraryapis.libraryapis.author;
 
 
-import com.skb.course.apis.libraryapis.model.common.Gender;
+import com.jm.libraryapis.libraryapis.model.common.Gender;
 
 import javax.persistence.*;
 import java.time.LocalDate;

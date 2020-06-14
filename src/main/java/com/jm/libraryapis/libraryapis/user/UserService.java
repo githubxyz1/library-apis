@@ -1,9 +1,9 @@
-package com.skb.course.apis.libraryapis.user;
+package com.jm.libraryapis.libraryapis.user;
 
-import com.skb.course.apis.libraryapis.exception.LibraryResourceAlreadyExistException;
-import com.skb.course.apis.libraryapis.exception.LibraryResourceNotFoundException;
-import com.skb.course.apis.libraryapis.security.SecurityConstants;
-import com.skb.course.apis.libraryapis.util.LibraryApiUtils;
+import com.jm.libraryapis.libraryapis.exception.LibraryResourceAlreadyExistException;
+import com.jm.libraryapis.libraryapis.exception.LibraryResourceNotFoundException;
+//import com.jm.libraryapis.libraryapis.security.SecurityConstants;
+import com.jm.libraryapis.libraryapis.util.LibraryApiUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -32,7 +32,8 @@ public class UserService {
         logger.debug("TraceId: {}, Request to add User: {}", traceId, userToBeAdded);
         UserEntity userEntity = new UserEntity(
                 userToBeAdded.getUsername(),
-                SecurityConstants.NEW_USER_DEFAULT_PASSWORD,
+      //          SecurityConstants.NEW_USER_DEFAULT_PASSWORD,
+                "passw111111",
                 userToBeAdded.getFirstName(),
                 userToBeAdded.getLastName(),
                 userToBeAdded.getDateOfBirth(),
@@ -41,7 +42,7 @@ public class UserService {
                 userToBeAdded.getEmailId(),
                 "USER");
 
-        userToBeAdded.setPassword(SecurityConstants.NEW_USER_DEFAULT_PASSWORD);
+     //   userToBeAdded.setPassword(SecurityConstants.NEW_USER_DEFAULT_PASSWORD);
         UserEntity addedUser = null;
 
         try {
