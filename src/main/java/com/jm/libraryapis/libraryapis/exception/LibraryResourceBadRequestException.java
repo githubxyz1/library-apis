@@ -4,12 +4,8 @@ public class LibraryResourceBadRequestException extends Exception {
 
     private String traceId;
 
-    public LibraryResourceBadRequestException(String message) {
+    public LibraryResourceBadRequestException(String traceId, String message) {
         super(message);
-    }
-
-    public LibraryResourceBadRequestException(String traceId, String s) {
-        super(s);
         this.traceId = traceId;
     }
 

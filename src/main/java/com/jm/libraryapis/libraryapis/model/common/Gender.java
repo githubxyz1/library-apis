@@ -1,4 +1,4 @@
-package com.skb.course.apis.libraryapis.model.common;
+package com.jm.libraryapis.libraryapis.model.common;
 
 public enum Gender {
 

@@ -5,7 +5,7 @@ public class LibraryApiError {
     private String traceId;
     private String errorMessage;
 
-    public LibraryApiError(String traceId) {
+    public LibraryApiError() {
     }
 
     public LibraryApiError(String traceId, String errorMessage) {
@@ -37,4 +37,3 @@ public class LibraryApiError {
                 '}';
     }
 }
-

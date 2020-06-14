@@ -4,12 +4,8 @@ public class LibraryResourceNotFoundException extends Exception {
 
     private String traceId;
 
-    public LibraryResourceNotFoundException(String message) {
+    public LibraryResourceNotFoundException(String traceId, String message) {
         super(message);
-    }
-
-    public LibraryResourceNotFoundException(String traceId, String s) {
-        super(s);
         this.traceId = traceId;
     }
 

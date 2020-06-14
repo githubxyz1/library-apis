@@ -1,6 +1,6 @@
-package com.skb.course.apis.libraryapis.author;
+package com.jm.libraryapis.libraryapis.author;
 
-import com.skb.course.apis.libraryapis.publisher.PublisherEntity;
+import com.jm.libraryapis.libraryapis.publisher.PublisherEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
